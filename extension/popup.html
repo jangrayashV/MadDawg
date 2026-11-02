@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>mad dawg</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <section class="controls-card" aria-label="Library controls">
+    <header><h1 class="brand" aria-label="mad dawg">MADDAWG.</h1><div class="header-actions"><button id="manage-toggle" class="icon" aria-label="Manage saved links" title="Manage saved links" aria-expanded="false" aria-controls="manage">⋯</button><button id="add-toggle" aria-expanded="false" aria-controls="capture"><span aria-hidden="true">＋</span> Add</button></div></header>
+    <div class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="search" type="search" placeholder="Search your stash…" aria-label="Search resources" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
+    <nav class="filters" aria-label="Filter library"><div class="filter-tabs" role="group" aria-label="Read status"><button data-filter="all" aria-pressed="true">All</button><button data-filter="unread" aria-pressed="false">Unread</button><button data-filter="read" aria-pressed="false">Read</button></div><select id="group-filter" aria-label="Filter by group"><option value="all">All groups</option></select></nav>
+    <section id="capture" class="control-panel" hidden aria-label="Add resource">
+      <div class="save-row"><select id="destination" aria-label="Save destination"><option value="">Ungrouped</option></select><button id="save" class="primary">Save page ↗</button></div>
+      <button id="create-group" class="text-button">＋ Group from this page</button>
+      <details id="paste"><summary>Paste a link <span aria-hidden="true">＋</span></summary><form id="add-link"><input id="resource-url" type="url" required placeholder="https://…" aria-label="Resource link"><input id="resource-title" maxlength="240" placeholder="Title (optional)" aria-label="Resource title"><input id="resource-description" maxlength="240" placeholder="One line (optional)" aria-label="One-line description"><button type="submit" class="primary">Save link ↗</button></form></details>
+    </section>
+    <section id="manage" class="control-panel" hidden aria-label="Manage saved links"><select id="selected-resource" aria-label="Link to manage"></select><div id="resource-actions" class="resource-actions"></div><div id="editor"></div></section>
+    <p id="status" role="status"></p>
+  </section>
+  <section class="data-card" aria-label="Saved resources"><div class="library-heading"><h2>Your stash <span id="count">0</span></h2><span id="library-meta">Saved for later</span></div><main id="list" aria-label="Saved links"></main><div class="library-footer"><span id="result-count" aria-live="polite"></span><span>Good finds. Kept close.</span></div></section>
+  <script src="popup.js" type="module"></script>
+</body></html>

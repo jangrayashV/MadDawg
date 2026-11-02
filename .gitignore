@@ -1,0 +1,23 @@
+# Local tooling and editor state
+.agents/
+.codex/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Dependencies, coverage, and generated files
+node_modules/
+coverage/
+dist/
+tmp/
+*.log
+*.zip
+*.crx
+
+# Local environment and signing keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
