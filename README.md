@@ -95,47 +95,7 @@ All saved data stays in `chrome.storage.local` in the current browser profile. T
 
 Fonts and icons are bundled locally. Saving a link does not fetch its destination page.
 
-## Repository contents
 
-Push these files and folders to GitHub:
-
-```text
-.gitignore
-README.md
-package.json
-extension/
-  manifest.json
-  background.js
-  content.js
-  model.js
-  popup.html
-  popup.css
-  popup.js
-  assets/
-  fonts/          # Include Roboto files and OFL.txt
-  icons/
-tests/
-```
-
-The complete `extension/` folder is the installable extension. `README.md`, `package.json`, and `tests/` document and validate the project. Keep the bundled font license in `extension/fonts/OFL.txt`.
-
-Local editor/agent folders, dependencies, environment files, logs, and generated archives are excluded by `.gitignore`. Saved user links are held in browser storage, not this repository.
-
-To prepare a commit from the project root:
-
-```sh
-git add .gitignore README.md package.json extension tests
-git diff --cached --stat
-git commit -m "Add mad dawg link-saving extension"
-```
-
-Push that commit to your chosen GitHub repository and branch. A source upload is separate from publishing to an extension store.
-
-For an optional downloadable release ZIP, package the contents of `extension/` with `manifest.json` at the ZIP root. Users must extract it before choosing **Load unpacked**. Increment the manifest version when publishing a new version.
-
-## Development / checks
-
-Requires Node.js 22+ for tests. Run `npm test`. No dependency installation or build is needed; reload the extension from the extensions page after edits.
 
 Manual browser acceptance check:
 
